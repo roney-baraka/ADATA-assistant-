@@ -40,4 +40,12 @@ $(document).ready(function () {
     
         });
 
+        //mic button click event
+
+        $("#MicBtn").click(function (e) { 
+          
+            $("#Oval").attr("hidden", true);
+            $("#SiriWave").attr("hidden", false);
+        });
+
 });
