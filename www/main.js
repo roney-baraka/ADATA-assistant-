@@ -44,8 +44,7 @@ $(document).ready(function () {
         eel.expose(DisplayMessage);
 
         function DisplayMessage(message) {
-            console.log("DisplayMessage: ", message)
-            $("#")
+            console.log(message)
         }
 
         //mic button click event
@@ -54,7 +53,7 @@ $(document).ready(function () {
             eel.playAssistantSound()
             $("#Oval").attr("hidden", true);
             $("#SiriWave").attr("hidden", false);
-            eel.takecommand();
+            eel.allCommand();
         });
 
 });

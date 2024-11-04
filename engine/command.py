@@ -10,7 +10,7 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()    
 
-@eel.expose
+
 def takecommand():
     r = sr.Recognizer()
 
@@ -26,14 +26,29 @@ def takecommand():
         eel.DisplayMessage('recognizing....')
         query = r.recognize_google(audio, language='en-in')
         print(f"user said: {query}")
-        eel.DisplayMessage(query)
-        speak(query)
+        eel.DisplayMessage(query) 
         eel.ShowHood()
         time.sleep(2)
 
     except Exception as e:
+        print("Error in recognition")
+        eel.DisplayMessage("Error in recognition")
         return ""
     
     return query.lower()
 
+@eel.expose
+def allCommands():
 
+    query = takecommand()
+    print(f"Command received: {query}")
+
+    if "open" in query:
+        print("running open command")
+        speak("Opening...")
+        eel.DisplayMessage("Opening...")
+
+    else:
+        print("Command not recognized ")
+        speak("command not recognized")
+        eel.DisplayMessage("Command not recognized")    
