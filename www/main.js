@@ -40,12 +40,21 @@ $(document).ready(function () {
     
         });
 
+        //DisplayMessage to python
+        eel.expose(DisplayMessage);
+
+        function DisplayMessage(message) {
+            console.log("DisplayMessage: ", message)
+            $("#")
+        }
+
         //mic button click event
 
         $("#MicBtn").click(function (e) { 
             eel.playAssistantSound()
             $("#Oval").attr("hidden", true);
             $("#SiriWave").attr("hidden", false);
+            eel.takecommand();
         });
 
 });
