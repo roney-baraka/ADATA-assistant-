@@ -6,15 +6,17 @@ $(document).ready(function () {
          in:{
             effect: "bounceIn",
          },
-         out:{
+         out: {
             effect: "bounceOut",
          },
     });
 
+
+    // SiriWave initialization
     const siriContainer = document.getElementById("siri-container");
+    let siriWave;
     if (siriContainer) {
-        // Initialize SiriWave
-        var siriWave = new SiriWave({
+        siriWave = new SiriWave({
             container: siriContainer,
             width: 800,
             height: 200,
@@ -23,37 +25,39 @@ $(document).ready(function () {
             speed: "0.30",   
             autostart: true
         });
-    };
+    }
 
-        // Siri message animation
-        $('.siri-message').textillate({
-            loop: true,
+    //Siri message animation 
+    $('.siri-message').textillate({
+        loop: true,
+        sync: true,
+        in: {
+            effect: "fadeInUp",
             sync: true,
-            in: {
-                effect: "fadeInUp",
-                sync: true,
-            },
-            out: {
-                effect: "fadeOutUp",
-                sync: true,
-            },
-    
+        },
+    });
+
+    //Display message to Python and update UI
+    eel.expose(DisplayMessage);
+    function DisplayMessage(message) {
+        console.log(message);
+        $('.siri-message li:first').text(message);
+        $('.siri-message li:first').textillate('start');
+    }
+
+    //Microphone button click event 
+    $("MicBtn").click(function (e) {
+        const micButton = $(this)
+        micButton.prop("disabled", true);
+        eel.playAssistantSound();
+        $("#Oval").attr("hidden", true);
+        $("#SiriWave").attr("hidden", false);
+
+        eel.allCommands().then(() => {
+            micButton.prop("disabled", false); 
+        }).catch((err) => {
+            console.error("Error during command execution:", err);
+            micButton.prop("disabled", false);
         });
-
-        //DisplayMessage to python
-        eel.expose(DisplayMessage);
-
-        function DisplayMessage(message) {
-            console.log(message)
-        }
-
-        //mic button click event
-
-        $("#MicBtn").click(function (e) { 
-            eel.playAssistantSound()
-            $("#Oval").attr("hidden", true);
-            $("#SiriWave").attr("hidden", false);
-            eel.allCommands();
-        });
-
+    });
 });
