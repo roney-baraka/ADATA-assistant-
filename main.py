@@ -6,10 +6,17 @@ from engine.command import *
 
 eel.init("www")
 
-playAssistantSound()
+def launch_app():
+    try:
+        eel.start ('index.html', mode ="chrome", host= '127.0.0.1', port=5500, block=True)
+    except Exception as e:
+        print(f"Error launching app: {e}")
 
+if __name__ == "__main__":
+    print("Starting A DATA Assistant...")
 
-
-os.system('open -a "Google Chrome" "http://127.0.0.1:5500/index.html"')
-
-eel.start('index.html', mode=None, host='127.0.0.1', port=5500, block=True) 
+    try:
+        playAssistantSound()
+    except Exception as e:
+        print(f"Error playing startup sound: {e}")
+    launch_app()
