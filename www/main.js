@@ -82,7 +82,7 @@ if ($('.siri-message').legth) {
 
        eel.allCommands()
           .then(() => {
-            micButton.prop("disabled" false);
+            micButton.prop("disabled", false);
           })
           .catch((err) =>{
             console.error("Error during command execution:", err);

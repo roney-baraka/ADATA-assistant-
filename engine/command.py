@@ -10,30 +10,38 @@ logging.basicConfig(filename="assistant.log", level=logging.DEBUG)
 
 
 def speak(text):
-    engine = pyttsx3.init()
-    if platform.system() == "Darwin":
-        engine.setProperty('voice', 'com.apple.speech.synthesis.voice.samantha')
-    elif platform.system() == "Windows":
-        engine.setProperty('rate', 150)
-    elif platform.system() == "Linux":
+    try:
+        engine =pyttsx3.init()
+        system = platform.system()
+
+        if system == "Darwin":
+            engine.setProperty('voice', 'com.apple.speech.synthesis.voice.samantha')    
+        elif system == "Windows":
+            engine.setProperty('rate', 150)
+        elif system == 'Linux':
+            engine.setProperty('rate', 174)
+
+
         engine.setProperty('rate', 174)
-    engine.setProperty('rate', 174)
-    engine.say(text)
-    engine.runAndWait   
+        engine.say(text)
+        engine.runAndWait()  
+    except Exception as e:
+        logging.error(f"Error in TTS: {e}")
+        eel.DisplayMessage("Text-to-speech failed.")
 
 
 def takecommand():
-    r = sr.Recognizer()
+    recognizer = sr.Recognizer()
 
     with sr.Microphone() as source:
         eel.DisplayMessage('listening....')
         logging.info("Listening for command...")
-        r.pause_threshold = 1
-        r.adjust_for_ambient_noise(source)
+        recognizer.pause_threshold = 1
+        recognizer.adjust_for_ambient_noise(source)
         try:
-            audio = r.listen(source, timeout=10, phrase_time_limit=6)
+            audio = recognizer.listen(source, timeout=10, phrase_time_limit=6)
             eel.DisplayMessage('Recognizing...')
-            query = r.recognize_google(audio, language= "en-in")
+            query = recognizer.recognize_google(audio, language= "en-in")
             eel.DisplayMessage(query)
             logging.info(f"Recognized command: {query} ")
             return query.lower()
