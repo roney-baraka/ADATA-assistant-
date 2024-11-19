@@ -69,3 +69,71 @@ INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:29:53] "GET /assets/im
 DEBUG:geventwebsocket.handler:Closed WebSocket
 DEBUG:geventwebsocket.handler:Failed to write closing frame -> closing socket
 DEBUG:geventwebsocket.handler:Closed WebSocket
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:46:19] "GET /index.html HTTP/1.1" 200 4738 0.004705
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:46:19] "GET /assets/vendore/textillate/animate.css HTTP/1.1" 200 60220 0.002247
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:46:19] "GET /style.css HTTP/1.1" 200 3694 0.010764
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:46:19] "GET /script.js HTTP/1.1" 200 8911 0.002664
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:46:19] "GET /assets/vendore/textillate/jquery.fittext.js HTTP/1.1" 200 1216 0.003478
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:46:19] "GET /assets/vendore/textillate/jquer.lettering.js HTTP/1.1" 200 1712 0.003299
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:46:19] "GET /controller.js HTTP/1.1" 200 1073 0.003644
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:46:19] "GET /eel.js HTTP/1.1" 200 6043 0.001224
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 10:46:19] "GET /main.js HTTP/1.1" 200 1884 0.001453
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+DEBUG:geventwebsocket.handler:Attempting to upgrade connection
+DEBUG:geventwebsocket.handler:WebSocket request accepted, switching protocols
+DEBUG:geventwebsocket.handler:Closed WebSocket
+DEBUG:geventwebsocket.handler:Failed to write closing frame -> closing socket
+DEBUG:geventwebsocket.handler:Closed WebSocket
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 11:31:50] "GET /index.html HTTP/1.1" 200 4738 0.002338
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 11:31:50] "GET /assets/vendore/textillate/animate.css HTTP/1.1" 200 60220 0.002983
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 11:31:50] "GET /style.css HTTP/1.1" 200 3694 0.008837
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 11:31:50] "GET /eel.js HTTP/1.1" 200 6043 0.001027
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 11:31:50] "GET /script.js HTTP/1.1" 200 8911 0.001793
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 11:31:50] "GET /assets/vendore/textillate/jquery.fittext.js HTTP/1.1" 200 1216 0.001062
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 11:31:50] "GET /assets/vendore/textillate/jquer.lettering.js HTTP/1.1" 200 1712 0.000921
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 11:31:50] "GET /main.js HTTP/1.1" 200 1884 0.002883
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+INFO:geventwebsocket.handler:127.0.0.1 - - [2024-11-19 11:31:50] "GET /controller.js HTTP/1.1" 200 1141 0.002514
+DEBUG:geventwebsocket.handler:Initializing WebSocket
+DEBUG:geventwebsocket.handler:Validating WebSocket request
+DEBUG:geventwebsocket.handler:Attempting to upgrade connection
+DEBUG:geventwebsocket.handler:WebSocket request accepted, switching protocols
+DEBUG:geventwebsocket.handler:Closed WebSocket
+DEBUG:geventwebsocket.handler:Failed to write closing frame -> closing socket
+DEBUG:geventwebsocket.handler:Closed WebSocket

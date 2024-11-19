@@ -1,15 +1,29 @@
 $(document).ready(function () {
 
+
+if ($('.text').length) {
     $('.text').textillate({
-         loop: true,
-         sync: true,
-         in:{
+        loop: true,
+        sync: true,
+        in: {
             effect: "bounceIn",
-         },
-         out: {
-            effect: "bounceOut",
-         },
+        },
+        out: {
+            effect: "bounceOut"
+        },
     });
+}
+
+if ($('.siri-message').legth) {
+    $('.siri-message').textillate({
+        loop: true,
+        sync: true,
+        in: {
+            effect: "fadeInUp",
+            sync: true,
+        },
+    });
+}
 
 
     // SiriWave initialization
@@ -25,6 +39,8 @@ $(document).ready(function () {
             speed: "0.30",   
             autostart: true
         });
+    } else {
+        console.error("#siri-container not found.");
     }
 
     //Siri message animation 
@@ -40,13 +56,19 @@ $(document).ready(function () {
     //Display message to Python and update UI
     eel.expose(DisplayMessage);
     function DisplayMessage(message) {
-        console.log(message);
-        $('.siri-message li:first').text(message);
-        $('.siri-message li:first').textillate('start');
+        console.log("DisplayMessage called with message", message);
+
+        if ($('.siri-message').length) {
+            $('.siri-message li:first').text(message);
+            $('.siri-message').textillate(start);
+        } else {
+            console.error("Element '.siri-message' not found.");
+        }
+
     }
 
     //Microphone button click event 
-    $("MicBtn").click(function (e) {
+    $("#MicBtn").click(function (e) {
         const micButton = $(this)
         micButton.prop("disabled", true);
         eel.playAssistantSound();
