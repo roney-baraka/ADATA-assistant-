@@ -69,17 +69,24 @@ if ($('.siri-message').legth) {
 
     //Microphone button click event 
     $("#MicBtn").click(function (e) {
-        const micButton = $(this)
+        const micButton =$(this);
         micButton.prop("disabled", true);
         eel.playAssistantSound();
-        $("#Oval").attr("hidden", true);
-        $("#SiriWave").attr("hidden", false);
 
-        eel.allCommands().then(() => {
-            micButton.prop("disabled", false); 
-        }).catch((err) => {
+        if($("#Oval").length && $("#Siriwave").length) {
+            $("#Oval").attr("hidden",true);
+            $("#SiriWave").attr("hidden", false);
+        } else{
+            console.error("#Oval or #SiriWave not found.");
+        }
+
+       eel.allCommands()
+          .then(() => {
+            micButton.prop("disabled" false);
+          })
+          .catch((err) =>{
             console.error("Error during command execution:", err);
             micButton.prop("disabled", false);
-        });
+          })
     });
 });
